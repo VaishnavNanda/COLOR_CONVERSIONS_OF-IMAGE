@@ -104,13 +104,8 @@ cv2.destroyAllWindows()
 3.Draw a rectangle around a specific region of interest in the image.
 ```
 import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-start = (150, 100)
-stop = (300, 200)
-color = (255, 255, 100)
-thickness = 10           
-res_img = cv2.rectangle(image, start, stop, color, thickness)
+image = cv2.imread("naturek.jpg")          
+res_img = cv2.rectangle(cv2.resize(image, (400, 300)), (150, 100), (300, 200), (255, 255, 100), 10)
 cv2.imshow('WINDOW', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -122,14 +117,7 @@ cv2.destroyAllWindows()
 ```
 import cv2
 image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-text = "OpenCV Drawing"
-position = (10, 50)
-font = cv2.FONT_HERSHEY_SIMPLEX
-font_scale = 1
-color = (255, 255, 255) 
-thickness = 2
-res = cv2.putText(image, text, position, font, font_scale, color, thickness, cv2.LINE_AA)
+res = cv2.putText(cv2.resize(image, (400, 300)), "OpenCV Drawing", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255) , 2, cv2.LINE_AA)
 cv2.imshow('WINDOW', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
