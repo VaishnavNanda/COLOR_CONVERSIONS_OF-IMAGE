@@ -80,7 +80,7 @@ cv2.destroyAllWindows()
 import cv2
 image = cv2.imread("naturek.jpg")
 image = cv2.resize(image, (400, 300))
-res = cv2.line(image, (0, 0), (image.shape[1], image.shape[0]), (255,0,0), 10)
+res = cv2.line(image, (0, 0), (300,400), (255,0,0), 10)
 cv2.imshow('WINDOW', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
