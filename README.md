@@ -1,10 +1,10 @@
-# COLOR_CONVERSIONS_OF-IMAGE
+# COLOR_CONVERSIONS_OF-IMAGE->
 ## AIM
 Write a Python program using OpenCV that performs the following tasks:
 
 i) Read and Display an Image.
 
-ii) Draw Shapes and Add Text.
+ii) 	Draw Shapes and Add Text.
 
 iii) Image Color Conversion.
 
@@ -23,250 +23,241 @@ viii)	Write and Save the Modified Image
 Anaconda - Python 3.7
 ## Algorithm:
 ### Step1:
-Load an image from your local directory and display it.
+1.Load an image from your local directory and display it.
 ### Step2:
-1.  Draw a line from the top-left to the bottom-right of the image.
+1.Draw a line from the top-left to the bottom-right of the image.
 
-2.	Draw a circle at the center of the image.
+2.Draw a circle at the center of the image.
 
-3.	Draw a rectangle around a specific region of interest in the image.
+3.Draw a rectangle around a specific region of interest in the image.
 
-4.	Add the text "OpenCV Drawing" at the top-left corner of the image.
+4.Add the text "OpenCV Drawing" at the top-left corner of the image.
 
 ### Step3:
-1.	Convert the image from RGB to HSV and display it.
-2.	Convert the image from RGB to GRAY and display it.
-3.	Convert the image from RGB to YCrCb and display it.
-4.	Convert the HSV image back to RGB and display it.
+1.Convert the image from RGB to HSV and display it.
+
+2.Convert the image from RGB to GRAY and display it.
+
+3.Convert the image from RGB to YCrCb and display it.
+
+4.Convert the HSV image back to RGB and display it.
 
 ### Step4:
-1.	Access and print the value of the pixel at coordinates (100, 100).
-2.	Modify the color of the pixel at (200, 200) to white.
+1.Access and print the value of the pixel at coordinates (100, 100).
+
+2.Modify the color of the pixel at (200, 200) to white.
 
 ### Step5:
-Resize the original image to half its size and display it.
+1.Resize the original image to half its size and display it.
 ### Step6:
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
+1.Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 ### Step7:
-1.	Flip the original image horizontally and display it.
-2.	Flip the original image vertically and display it.
+1.Flip the original image horizontally and display it.
+
+2.Flip the original image vertically and display it.
 
 ### Step8:
-Save the final modified image to your local directory.
+1.Save the final modified image to your local directory.
 
 
 ## Program:
-### Developed By: VAISHNAV NANDA S
+### Developed By: Vaishnav Nanda
 ### Register Number: 212222240112
-
-
-## Output:
-
-### 1. Read and display the image
-i.Load an image from your local directory and display it.
+### i)Read and Display an Image
 ```
 import cv2
-image=cv2.imread('naturek.jpg',1)
-image = cv2.resize(image, (400, 300))
-cv2.imshow('NATUREK',image)
+image=cv2.imread('wallpaper.jpg',1)
+image = cv2.resize(image,(500,500))
+cv2.imshow('Image Window', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-02 091158](https://github.com/user-attachments/assets/520ea58c-0186-456d-9b9e-9e23c56bfb46)
+### Output
+![image](https://github.com/user-attachments/assets/1de23169-5bc3-46c7-b738-5a7ceba368f6)
 
-### Draw Shapes and Add Text
-(1) Draw a line from the top-left to the bottom-right of the image.
+### ii)Draw Shapes and Add Text
+1) Draw a line from the top-left to the bottom-right of the image.
 ```
-import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-res = cv2.line(image, (0, 0), (300,400), (255,0,0), 10)
-cv2.imshow('WINDOW', res)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(500,500))
+res = cv2.line(img, (0, 0), (500,500), (200, 100, 205), 10)
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-08 120658](https://github.com/user-attachments/assets/3f281a31-8d3f-4e96-959b-b373d9001383)
+### Output
+![image](https://github.com/user-attachments/assets/90164df7-4dd4-45dd-a87f-b0093bb5ab65)
 
-2. Draw a circle at the center of the image.
+(2) Draw a circle at the center of the image.
 ```
-import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image, (400, 300))
-height, width, _ = image.shape
-center_coordinates = (width // 2, height // 2)
-res = cv2.circle(image, center_coordinates, 120, (0, 255, 0), 10)
-cv2.imshow('WINDOW', res)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(500,500))
+res = cv2.circle(img,(250,250), 150, (255, 0, 0), 10)
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-08 120744](https://github.com/user-attachments/assets/bcbd9b85-cf3f-4feb-9cfa-24790dd1814c)
+### Output
+![image](https://github.com/user-attachments/assets/754618e9-0ed8-44b6-bb90-b570e0fb5a45)
 
-3.Draw a rectangle around a specific region of interest in the image.
+(3) Draw a rectangle around a specific region of interest in the image.
 ```
-import cv2
-image = cv2.imread("naturek.jpg")          
-res_img = cv2.rectangle(cv2.resize(image, (400, 300)), (150, 100), (300, 200), (255, 255, 100), 10)
-cv2.imshow('WINDOW', res_img)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(500,500))
+res_img = cv2.rectangle(img, (500-10,500-10), (0+10,0+10),(100, 255, 100), 10)
+cv2.imshow('Image Window', res_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 085805](https://github.com/user-attachments/assets/add75b55-2ff3-446f-b7f0-f700b0ebb734)
+### Output
+![image](https://github.com/user-attachments/assets/befcdf64-d023-45b2-9fbd-94739761c519)
 
-
-4.Add the text "OpenCV Drawing" at the top-left corner of the image.
+(4) Add the text "OpenCV Drawing" at the top-left corner of the image.
 ```
-import cv2
-image = cv2.imread("naturek.jpg")
-res = cv2.putText(cv2.resize(image, (400, 300)), "OpenCV Drawing", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255) , 2, cv2.LINE_AA)
-cv2.imshow('WINDOW', res)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(500,500))
+font = cv2.FONT_HERSHEY_SIMPLEX
+res = cv2.putText(img,"Opencv_drawinG", (10,50), font,1, (255, 255, 255),2)
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 085842](https://github.com/user-attachments/assets/95c05efb-5590-4d91-9462-8c1c44689927)
+### Output
+![image](https://github.com/user-attachments/assets/00baeb5e-6090-4213-ab4f-c3a23bd33106)
 
 ### iii)Image Color Conversion
-(i)Convert the image from RGB to HSV and display it
+1) Convert the image from RGB to HSV and display it
 ```
-import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-hsv = cv2.cvtColor(image,cv2.COLOR_RGB2HSV)
-cv2.imshow('RGB2HSV',hsv)
+img = cv2.imread('wallpaper.jpg',1)
+img = cv2.resize(img,(500,500))
+cv2.imshow('Original Image',img)
+hsv2 = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
+cv2.imshow('RGB2HSV',hsv2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 085922](https://github.com/user-attachments/assets/1cf5b4fa-78bf-4f94-941d-5b2fb7748dd4)
+### Output
+![image](https://github.com/user-attachments/assets/95970a36-8668-486f-aa5e-7368c22a10bb)
 
 (2) Convert the image from RGB to GRAY and display it.
-
 ```
-import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
-cv2.imshow('RGB2GRAY',gray)
+img = cv2.imread('wallpaper.jpg',1)
+img = cv2.resize(img,(400,400))
+cv2.imshow('Original Image',img)
+gray2 = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
+cv2.imshow('RGB2GRAY',gray2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090013](https://github.com/user-attachments/assets/c2360004-6330-4114-bba8-fd8c4aac14fc)
+### Output
+![image](https://github.com/user-attachments/assets/e450b0fa-f4c5-4078-a4a8-80617918ab35)
 
-
-(3) Convert the image from RGB to YCrCb and display it.
+3) Convert the image from RGB to YCrCb and display it.
 ```
-import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-YCrCb = cv2.cvtColor(image, cv2.COLOR_BGR2YCrCb)
-cv2.imshow('RGB-2-YCrCb',YCrCb)
+img = cv2.imread('wallpaper.jpg',1)
+img = cv2.resize(img,(400,400))
+cv2.imshow('Original Image',img)
+YCrCb1 = cv2.cvtColor(img, cv2.COLOR_BGR2YCrCb)
+cv2.imshow('RGB-2-YCrCb',YCrCb1)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090053](https://github.com/user-attachments/assets/f519b75b-8777-4709-aef0-237cf690b5e6)
+### Output
+![image](https://github.com/user-attachments/assets/6ffaece3-e442-40ad-9da5-bb438642bf7b)
 
 (4) Convert the HSV image back to RGB and display it.
 ```
-import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(300,200))
-cv2.imshow('ORIGINAL IMAGE',image)
-RGB = cv2.cvtColor(image,cv2.COLOR_HSV2BGR)
-cv2.imshow('HSV2RGB',RGB)
+img = cv2.imread('wallpaper.jpg',1)
+img = cv2.resize(img,(400,400))
+cv2.imshow('Original Image',img)
+BGR = cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
+cv2.imshow('HSV2RGB',BGR)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090132](https://github.com/user-attachments/assets/6e818c27-966e-46e0-a1b3-52887d8010ef)
+### Output
+![image](https://github.com/user-attachments/assets/ddc827eb-c6ca-4203-9855-f3cd365576da)
 
 ### iv)Access and Manipulate Image Pixels
-(1) Access and print the value of the pixel at coordinates (100, 100)
 ```
-pixel_value = image[100, 100]
+img = cv2.imread('wallpaper.jpg', 1)
+img = cv2.resize(img, (400, 400))
+cv2.imshow('Original Image', img)
+pixel_value = img[100, 100]
 print(f"Pixel value at (100, 100): {pixel_value}")
-```
-![Screenshot 2024-09-09 090158](https://github.com/user-attachments/assets/53fb2f1a-8e20-4b3b-bdeb-cf314f0326fd)
+img[199, 199] = [255, 255, 255]
+cv2.imshow('Modified Image', img)
 
-(2) Modify the color of the pixel at (200, 200) to white
-```
-import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(400,300))
-cv2.imshow('ORIGINAL IMAGE',image)
-image[200, 200] = [255, 255, 255] 
-cv2.imshow('MODIFIED IMAGE', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090237](https://github.com/user-attachments/assets/da0721e2-3301-43c2-9f66-e6974f3a4698)
+### Output
+![image](https://github.com/user-attachments/assets/f4513f72-2d9e-4faf-a83d-020d14102dd1)
 
-### v)Image Resizing:
-Resize the original image to half its size and display it.
+### v)Image Resizing
 ```
-cv2.imshow('ORIGINAL IMAGE',image)
-resized_image = cv2.resize(image, (image.shape[1] // 2, image.shape[0] // 2))
-cv2.imshow('RESIZED IMAGE', resized_image)
+img = cv2.imread('wallpaper.jpg', 1)
+resized_img = cv2.resize(image, (400, 400))
+cv2.imshow('Original',image)
+cv2.imshow('resized',resized_img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090318](https://github.com/user-attachments/assets/60fbc978-3772-4249-9148-9c5486c4599e)
-![Screenshot 2024-09-09 090331](https://github.com/user-attachments/assets/3ed7632c-9359-45e6-9aef-3fce7858cc4e)
+### Output
+![image](https://github.com/user-attachments/assets/fbbe8f32-2116-406e-ac83-ea61cf50c2e8)
 
 ### vi)Image Cropping
-Crop a region of interest (ROI) from the image (e.g., a 100x100 pixel area starting at (50, 50)) and display it.
 ```
-import cv2
-image = cv2.imread('naturek.jpg',1)
-image = cv2.resize(image,(400,300))
-x, y = 50, 50
-width, height = 100, 100
-roi = image[y:y + height, x:x + width]
-cv2.imshow('CROPPED IMAGE', roi)
+image1=cv2.imread('wallpaper.jpg',1)
+roi = image1[50:50 + 425, 50:50 + 425]
+cv2.imshow('Cropped Image', roi)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090407](https://github.com/user-attachments/assets/6a1d03bb-0c93-4207-941b-96ea80360a07)
-### vii)Image Flipping:
+### Output
+![image](https://github.com/user-attachments/assets/07012821-42a8-4aad-b3ea-59890f552611)
+
+### vii)Image Flipping
 (1) Flip the original image horizontally and display it.
 ```
-import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image,(300,200))
-res=cv2.rotate(image,cv2.ROTATE_180)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(400,400))
+res=cv2.rotate(img,cv2.ROTATE_180)
+cv2.imshow('Original',img)
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090449](https://github.com/user-attachments/assets/747a0eff-266f-494d-862c-be8548fd88d8)
+### Output
+![image](https://github.com/user-attachments/assets/021ea332-4c8d-46af-b5a4-3df248e1e5b8)
 
 (2) Flip the original image vertically and display it.
 ```
-import cv2
-image = cv2.imread("naturek.jpg")
-image = cv2.resize(image,(300,200))
-res=cv2.rotate(image,cv2.ROTATE_90_CLOCKWISE)
-cv2.imshow('ORIGINAL IMAGE',image)
-cv2.imshow('FLIPPED IMAGE', res)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(400,400))
+res=cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
+# Display the HSV image
+cv2.imshow('Original',img)
+cv2.imshow('Image Window', res)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-![Screenshot 2024-09-09 090532](https://github.com/user-attachments/assets/f4d998f1-00a1-4fc5-90e1-918d8c793018)
-![Screenshot 2024-09-09 090552](https://github.com/user-attachments/assets/fa353d26-4e1d-4117-8fa6-045c6cd24447)
+### Output
+![image](https://github.com/user-attachments/assets/2d7ebe52-7ef3-4614-83fa-3391c6394273)
 
 ### viii)Write and Save the Modified Image
-Save the final modified image to your local directory.
 ```
 import cv2
-img = cv2.imread("naturek.jpg")
-img = cv2.resize(img,(300,200))
-cv2.imwrite('nature_pic.jpg',img)
+img = cv2.imread("wallpaper.jpg")
+img = cv2.resize(img,(300,300))
+cv2.imwrite('sipder_man.jpg',img)
 ```
-![Screenshot 2024-09-09 090632](https://github.com/user-attachments/assets/874121bf-a1c9-4fb9-be27-e4613309ad2d)
+### Output
+![image](https://github.com/user-attachments/assets/c6d3d7e9-5b66-48de-94d8-f517ab6ff2e3)
 
 ## Result:
+Thus the images are read, displayed, and written ,and color conversion was performed  successfully using the python program.
 
-Thus the images are read, displayed, and written ,and color conversion was performed successfully using the python program.
 
 
 
